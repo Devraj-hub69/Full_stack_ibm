@@ -1,0 +1,97 @@
+/* Add your CSS here */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: #333;
+    color: white;
+    padding: 2px 0;
+    /* text-align: center; */
+    
+}
+.icon{
+    display: inline-block;
+    text-align: right;
+    font-size: 20px;
+    margin-left: 1200px;
+}
+.contact{
+    
+    align-items: flex-end;
+    background-color: #888888;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+#pic{
+    background-image: url(../classwork/pic2.JPG);
+    /* text-decoration: double; */
+    background-size:100%;
+    color: white;
+    background-repeat: no-repeat;
+
+    height: 600px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+span{
+    font-size: 300%;
+    font-style: italic;
+    padding-left: 120px;
+
+    text-shadow: 2px 2px 4px #000000;
+    text-align: center;
+    
+}
+
+#about{
+    background-color: #ebe9e9;
+    color: rgb(28, 28, 28);
+    padding: 2px 0;
+    text-align: center;
+    
+}
+section {
+    padding: 20px;
+  
+}
+#projects{
+    background-color: #b9bdbd;
+    text-shadow: 2px 2px 4px #544e4e;
+    padding: 13px ;
+    text-align: center;
+    
+}
+.project{
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    box-shadow: 5px 5px 5px #888888;
+    text-align: left;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

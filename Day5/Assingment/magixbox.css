@@ -1,0 +1,113 @@
+.magicBox1{
+    height:200px;
+    width:200px;
+    border:2px solid black;
+    background-color: rgba(70, 50, 90, 0.955);
+    margin:auto;
+    margin-top: 100px;
+    text-align: center;
+    color:antiquewhite;
+    text-shadow:8px 8px 8px rgb(4, 4, 4);
+    font-size:x-large;
+    font-style: italic;
+}
+.magicBox1:hover{
+    cursor: pointer;
+    box-shadow: 10px 10px 10px rgb(59, 58, 58);
+    background-color: red;
+    height:210px;
+    width:210px;
+    color: black;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLUJPgbFB2lqHNL-4FrwcR5RjMjpN0tqqHQg&s);
+}
+header{
+    height:90px;
+    width:100%;
+    background-color: rgb(48, 45, 237);
+    color: aliceblue;
+}
+body{
+    background-color: rgb(184, 236, 236);
+}
+#items{
+    display:inline;
+    align-items:end;
+    text-align: right;
+    padding-left: 80%;
+    color: azure;
+}
+footer{
+    height:90px;
+    width:100%;
+    background-color: rgb(17, 18, 18);
+    text-align: center;
+    color: aliceblue;
+    position:fixed;
+    margin-top: 21%;
+}
+.boxes{
+    display: flex;
+    height:80%;
+    width:100%;
+}
+.magicBox2{
+    height:200px;
+    width:200px;
+    border:2px solid black;
+    background-color: rgba(102, 6, 198, 0.955);
+    margin-top: 100px;
+    color:antiquewhite;
+    text-shadow:8px 8px 8px rgb(4, 4, 4);
+    font-size:x-large;
+    font-style: italic;
+}
+.magicBox2:hover{
+    cursor: pointer;
+    box-shadow: 10px 10px 10px rgb(59, 58, 58);
+    background-color: rgb(230, 221, 221);
+    height:210px;
+    width:210px;
+    align-items: center;
+    background-size: 205px;
+    color: black;
+}
+.magicBox2:active{
+    border-radius: 100%;
+    background-image: url(https://img.myloview.com/stickers/sunglasses-emoticon-with-big-smile-700-183821678.jpg);
+}
+.magicBox3{
+    height:200px;
+    width:200px;
+    border:2px solid black;
+    background-color: rgba(108, 198, 6, 0.955);
+    margin:auto;
+    margin-top: 100px;
+    color:antiquewhite;
+    text-shadow:8px 8px 8px rgb(4, 4, 4);
+    font-size:x-large;
+    font-style: italic;
+}
+.magicBox3:hover{
+    cursor: pointer;
+    box-shadow: 10px 10px 10px rgb(59, 58, 58);
+    background-color: rgb(202, 195, 195);
+    height:210px;
+    width:210px;
+    color: black;
+    background-image: url(https://musicart.xboxlive.com/7/f2806300-0000-0000-0000-000000000002/504/image.jpg?q=90&m=6&h=270&w=270&b=%23FFFFFFFF&f=jpg&o=f&aim=true);
+}
+.magicBox3:active{
+    border-radius: 100%;
+    background-image: url(https://pm1.aminoapps.com/6946/589ab7914c9a456b4c4927ee8adeb7261a7ba0d4r1-970-546v2_uhq.jpg);
+    background-size: 220px;
+}
+#a1{
+    color:antiquewhite;
+    margin-inline: 10px;
+    font-size:x-large;
+}
+#name{
+    font-size:x-large;
+}
+
+

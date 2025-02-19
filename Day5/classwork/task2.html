@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="task.css">
+    <style>
+        .p1{
+            background-color: brown;
+        }
+        #p2{
+            background-color: black;
+            color:beige
+        }
+        #p3{
+            background-color: rgb(192, 246, 15);
+            color: black;
+        }
+        #parent3 h1{
+            color: rgb(235, 27, 27);
+            background-color: chartreuse;
+        }
+        .dj>:nth-child(3){
+            background-color:blue;
+            color: chartreuse;
+        }
+        .dj>:nth-child(2){
+            background-color:rgb(255, 145, 0);
+            color: chartreuse;
+        }
+        #parent2>:nth-child(1)+p{
+            background-color:blue;
+            color: chartreuse;
+        }
+        .dj>:nth-child(3)~p{
+            background-color:blue;
+            color: chartreuse;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p class="p1">i am a paragraph</p>
+    </div>
+    <div>
+        <p class="p" id="p3">i am a paragraph</p>
+    </div>
+    <div>
+        <p class="p">i am a paragraph</p>
+    </div>
+    <div>
+        <p class="p" id="p2">i am a paragraph</p>
+    </div>
+    <div id="parent">
+        <p>I am paragraph</p>
+        <div>
+            <p>child_1</p>
+            <p>child_2</p>
+            <div>
+                <p>grand child_1</p>
+                <p>grand child_2</p>
+            </div>
+        </div>
+    </div>
+    <div id="parent2">
+        <p>I am paragraph</p>
+            <p>child_1</p>
+            <p>child_2</p>
+            <div>
+                <p>grand child_1</p>
+                <p>grand child_2</p>
+            </div>
+    </div>
+    <div class="dj">
+        <p>I am paragrap</p>
+        <h1>Devraj</h1>
+        <p>I am paragrap</p>
+        <p>I am paragrap</p>
+        <p>I am paragrap</p>
+        <div>
+            <p>I am paragraph</p>
+        </div>
+    </div>
+    <div id="parent3">
+        <p>I am paragraph</p>
+        <h1>I am Hare</h1>
+        <p>child_1</p>
+        <p>child_2</p>
+        <p>grand child_1</p>
+        <p>grand child_2</p>
+    </div>
+    <div style="height:200px; width:200px;border:5px solid black; overflow:hidden;overflow:scroll;overflow:auto;background-color:aqua;color:red;box-shadow:10px 10px 10px black">
+        <p>A paragraph is a section of writing that focuses on a single idea or topic. Paragraphs are made up of one or more sentences that are related to the same topic. They are often indented at the beginning of the first sentence. 
+            Purpose of paragraphs
+            Paragraphs help organize and structure written work.
+            They make it easier for readers to follow the author's thoughts.
+            They are essential for organizing long pieces of writing such as novels, papers, or even emails. 
+            Structure of a paragraph 
+            A topic sentence that previews what the paragraph will be about
+            Supporting sentences that provide details to support the topic sentence
+            A concluding sentence that wraps up the paragraph and ties back to the topic sentence
+            Synonyms for paragraph section, clause, item, part, and passage. </p>
+    </div>
+</body>
+</html>

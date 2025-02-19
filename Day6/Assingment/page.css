@@ -1,0 +1,142 @@
+#navbar{
+    height:100px;
+    width: 100%;
+    display:inline;
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+}
+.fs1{
+    height:40px;
+    border: none;
+    font-size: x-large;
+}
+.user{
+    height:60px;
+    width:134px;
+    background-color: blue;
+    display: inline;
+    display: flex;
+    border-radius: 26px;
+    cursor: pointer;
+    box-shadow: 1px 10px 20px 0px gray;
+}
+#logo{
+    height: 50px;
+    width:50px;
+    border-radius: 50%;
+    background-color: antiquewhite;
+    text-align: center;
+    margin-top: 5px;
+    font-size:xx-large;
+    margin: auto;
+    background-size: cover;
+}
+span{
+    color:aliceblue;
+    font-size:x-large;
+    margin:auto
+}
+#img1{
+    border-radius: 20px;
+    /* margin-right: 100px; */
+}
+.imges:hover{
+    cursor: pointer;
+    box-shadow: 1px 10px 20px 0px gray;
+}
+#img2:hover{
+    cursor: pointer;
+    box-shadow: 1px 10px 20px 0px gray;
+}
+#img2{
+    height:150px;
+    width: 250px;
+    margin-left: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+.imges{
+    height:480px;
+    width: 1440px;
+    display: inline;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.full-img{
+    height: 500px;
+    width: 100%;
+    display: flex;
+    background-color: rgb(209, 240, 240);
+}
+.recharges{
+    display: flex;
+    justify-content: space-around;
+    /* border: 1px solid black; */
+    height: 300px;
+    width: 45%;
+    justify-content: space-evenly;
+    margin: auto;
+    margin-top: 20px;
+    box-shadow: 1px 10px 20px 0px aquamarine;
+}
+#p1{
+    height:200px;
+    width: 250px;
+    margin-top: 70px;
+    margin-right: 50px;
+}
+#p1:hover{
+    height: 210px;
+    width: 260px;
+    box-shadow: 1px 5px 5px 5px rgb(178, 228, 211);
+    cursor: pointer;
+}
+h2{
+    margin-left: 40px;
+}
+.big{
+    display: flex;
+}
+.longimage{
+    width: 90%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 30px;
+    cursor: pointer;
+}
+p{
+    font-size:larger;
+    font-weight: bold;
+}
+select{
+    font-weight: bold;
+    cursor: pointer;
+}
+select:hover{
+    box-shadow: 1px 10px 20px 0px gray;
+}
+#leftarrow{
+    margin-top: 250px;
+    transform: rotate(180deg);
+    margin-bottom: 236px;
+    cursor: pointer;
+}
+#rightarrow{
+    margin-top: 250px;
+    margin-bottom: 250px;
+    cursor: pointer;
+}
+/* #leftarrow:hover{
+    box-shadow: 1px 10px 20px 0px gray;
+}
+#rightarrow:hover{
+    box-shadow: 1px 10px 20px 0px gray;
+} */

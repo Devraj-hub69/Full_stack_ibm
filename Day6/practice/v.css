@@ -2,15 +2,23 @@
     height: 200px;
     width: 200px;
     background-color: red;
+    border-radius:50% ;
+    /* text-align: center; */
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: auto;
 }
 #c1{
-    height: 100px;
-    width: 500px;
+    height: 200px;
+    width: 200px;
     background-color: rgb(4, 203, 50);
+    margin-top: 100px;
+    margin:auto;
 }
-.p1>#c1{
-    display: none;
+.p1+#c1{
+    display: block;
 }
 .p1:hover +#c1{
-    display: block;
+    display: none;
 }

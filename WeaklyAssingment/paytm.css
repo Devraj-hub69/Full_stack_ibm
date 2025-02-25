@@ -315,6 +315,7 @@ label{
     margin-bottom: 20px;
     background-image: url(https://assetscdn1.paytm.com/images/catalog/view/1617695245399.png);
     background-size: cover;
+    cursor: pointer;
 }
 .minbox>div>img{
     padding-left: 20px;
@@ -364,6 +365,7 @@ label{
     padding-top: 5px;
     padding-bottom: 5px;
     color:#FFFFFF;
+    cursor: pointer;
     margin-left: 20px;
 }
 .longlearn{
@@ -374,6 +376,7 @@ label{
     border-radius: 40px;
     background-color: #002970;
     margin:auto;
+    cursor: pointer;
 }
 #learn2{
     height: 30px;
@@ -388,6 +391,7 @@ label{
     margin-left: 20px;
     margin-top: 25px;
     margin-left:200px ;
+    cursor: pointer;
 }
 #slogo{
     margin-top: 20px;
@@ -412,6 +416,7 @@ body{
     background-image: url(https://assetscdn1.paytm.com/images/catalog/view_item/1725638720587.png);
     background-size: cover;
     margin-right: 30px;
+    cursor: pointer;
 }
 #boldl>span{
     color: #101010;
@@ -480,7 +485,8 @@ body{
     background-color: #002970;
     color: #F7F9FC;
     margin-left: 20px;
-    margin-top: 66px;
+    margin-top: 66px;cursor: pointer;
+
 }
 .middiv2{
     height:800px;
@@ -506,6 +512,7 @@ body{
     width: 1440px;
     justify-content: center;
     border-radius: 20px;
+    cursor: pointer;
 }
 #t1{
     font-size:50px;
@@ -551,6 +558,7 @@ body{
     border-radius: 30px;
     margin-bottom: 20px;
     background-color: #fff;
+    cursor: pointer;
 }
 footer{
     background-color: #fff;

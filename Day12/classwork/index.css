@@ -1,0 +1,46 @@
+.p1{
+    width: 25%;
+    height: 600px;
+    border: 1px solid rgb(222, 222, 222);
+    margin: auto;
+    text-align: center;
+    box-shadow: rgb(244, 244, 244) 0px 20px 30px -10px;
+}
+input{
+    width: 87%;
+    margin-bottom: 20px;
+    padding: 20px;
+    font-size: larger;
+}
+.p1>form>button{
+    width: 20%;
+    padding: 20px;
+    margin-top: 30px;
+    background-color: green;
+    border-radius: 20px;
+    border: 1px solid antiquewhite;
+    font-size: larger;
+    color: rgb(233, 227, 227);
+}
+body{
+    background-image: url(https://media.gettyimages.com/id/1370880112/video/4k-abstract-blue-background-wave-particles-form-stock-video-stock-video.jpg?s=640x640&k=20&c=IG9uVMdtNZTfOABS30Evhj1szMN8D9ovAwv6RbftrsE=);
+}
+button:hover{
+    cursor: pointer;
+    box-shadow: rgba(231, 231, 232, 0.4) 0px 0px 0px 2px, rgba(240, 241, 241, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    color: red;
+}
+h1{
+    color:rgb(208, 72, 232)
+}
+table{
+    color:white;
+    border: 1px solid white;
+    margin: auto;
+    margin-top: 10px;
+    width: 50%;
+}
+table,td{
+    border: 1px solid white;
+    border: 1;
+}

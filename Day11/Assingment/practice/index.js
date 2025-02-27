@@ -257,16 +257,11 @@
 // }
 // console.log(frequency(arr4));//3
 function sumNumbersInString(s) {
-    // Extract all numbers from the string
     let numbers = s.match(/\d+/g).map(Number);
-    // Sum them up
     let totalSum = numbers.reduce((acc, num) => acc + num, 0);
-    // Replace numbers with the sum
     let newString = s.replace(/\d+/g, '').replace(/([a-zA-Z]+)/g, `$1${totalSum}`);
     return newString;
 }
-
-// Example usage
 let inputString = "abc123xyz45pq7";
 let result = sumNumbersInString(inputString);
-console.log(result);  // Output: "abc175pq"
+console.log(result);

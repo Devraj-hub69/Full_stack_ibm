@@ -62,4 +62,5 @@ data.sort((a,b)=>{
         return 1;
     }
 })
+//data.sort((a,b)=>a.name.localCompare(b.name))
 console.log(data)

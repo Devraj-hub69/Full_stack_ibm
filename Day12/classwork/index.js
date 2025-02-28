@@ -23,8 +23,9 @@ form.addEventListener("submit",(e)=>{
     td4.innerText=obj.password;
     let td5=document.createElement("td");
     td5.innerText=obj.password2;
-    tr.append(td1,td2,td3,td4,td5,td6);
+    tr.append(td1,td2,td3,td4,td5);
     let tbody=document.getElementById("tbody").append(tr);
+    console.log(tbody);
 
 
     

@@ -190,10 +190,16 @@ function showData(arr){
     });
    
 }
-//showData(products)
+showData(products)
 
-let cart=[];
+let cart=JSON.parse(localStorage.getItem() || []);
+
 function addToCart(el,index){
+  for(let i=0;i<arr.length;i++){
+    if(arr[i].id==el.id){
+      return alert("already exist")
+    }
+  }
     console.log(el,index)
     cart.push(el);
     localStorage.setItem("cartData",JSON.stringify(cart));
@@ -214,4 +220,7 @@ products.sort((a,b)=>{
     return 0;
   })
 showData(products)
+function cartPage(){
+  window.location.href="cart.html"
+}
 

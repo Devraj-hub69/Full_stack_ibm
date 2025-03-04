@@ -29,3 +29,10 @@ function getData(){
     });
 }
 getData();
+
+function deleteFun(el,index){
+    let deletedcartdata=JSON.parse(localStorage.getItem("Datacart"));
+    deletedcartdata.splice(index,1);
+    console.log()
+    localStorage.setItem("Datacart",JSON.stringify())
+}

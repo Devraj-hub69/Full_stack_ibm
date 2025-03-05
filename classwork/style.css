@@ -1,0 +1,40 @@
+.navbar{
+    background-color: aqua;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+}
+#searchbar{
+    display: flex;
+    height: 50px;
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 30px;
+    align-items: center;
+    background-color: white;
+}
+#searchbar>div>input{
+    border: none;
+    margin-left: 30px;
+    font-size: 18px;
+}
+body{
+    background-color: black;
+}
+#create{
+    display: flex;
+}
+#bar{
+    height: 45px;
+    width: 45px;
+    border: 1px solid black;
+    text-align:  center;
+    border-radius: 50%;
+}
+#bar>i{
+    margin-top: 8px;
+    font-size: 30px;
+}
+.bigbar{
+    display: flex;
+}

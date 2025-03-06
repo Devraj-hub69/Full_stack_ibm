@@ -199,7 +199,7 @@ body{
     font-size: 20px;
 }
 #longnav>div:hover{
-    background-color: rgb(80, 78, 78);
+    background-color: black;
     cursor: pointer;
     color: white;
 }

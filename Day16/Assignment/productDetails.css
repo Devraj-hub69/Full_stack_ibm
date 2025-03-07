@@ -1,0 +1,37 @@
+*{
+    padding:0;
+    margin:0;
+    font-family: sans-serif;
+}
+.navBar{
+  height: 80px;
+  width: 100%;
+  background-color: #08f000;
+  position:sticky;
+  top:0px;
+  border: 2px solid black;
+}
+.nav1>h1{
+    text-align: center;
+    color:blue;
+}
+.nav2>button{
+    width:10%;
+    height:30px;
+    border-radius: 10px;
+    /* text-align: center; */
+    font-size: 18px;
+    background-color: rgb(217, 8, 200);
+    color:white;
+    font-weight: 600;
+    cursor:pointer;
+    margin-left: 20px;
+}
+.product{
+    text-align: center;
+}
+.product>img{
+  height:400px;
+  width:400px;
+
+}

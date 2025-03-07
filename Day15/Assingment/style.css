@@ -38,8 +38,8 @@
     width:10%;
     height:34px;
     font-size: 17px;
-    background-color:#0CAFFF;
-    color:white;
+    background-color:greenyellow;
+    color:blue;
     font-weight: 600;
     border-radius: 10px;
     border:none;
@@ -53,9 +53,9 @@
     /* margin-top: 3px; */
 }
 .EachProduct{
-    border:2px solid rgba(0, 132, 255, 0.906);
+    border:2px solid rgba(211, 208, 16, 0.906);
     padding:10px;
-    background-color: #FFFFFF;
+    background-color:aliceblue;
     border-radius: 10px;
 
 }
@@ -69,8 +69,8 @@
     height:30px;
     font-weight: 600;
     font-size:17px ;
-    background-color:#0CAFFF;
-    color:white;
+    background-color:yellow;
+    color:brown;
     border-radius: 10px;
     border:none;   
     cursor:pointer;

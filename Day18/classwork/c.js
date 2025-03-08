@@ -1,4 +1,4 @@
-let API_KEY = "AIzaSyCy72l1pxo6bczRGc439YBWxCG6zrGOHHQ";
+let API_KEY = "AIzaSyBGkvDY2HiKW1hAjt5OpQUjA8j6HHOa7aQ";
 
 let lower_body = document.getElementById("lower-body");
 
@@ -45,7 +45,7 @@ async function showData(arr){
 
             localStorage.setItem("videoData", JSON.stringify(obj));
 
-            window.location.href = "video.html"
+            window.location.href = "v.html"
         }
     });
 }

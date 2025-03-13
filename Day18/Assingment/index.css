@@ -7,6 +7,7 @@ header{
     position: sticky;
     top: 1px;
     z-index: 1;
+    /* background-color: aliceblue; */
 }
 #searchbar{
     display: flex;
@@ -140,7 +141,7 @@ body{
 }
 #longdiv{
     height:900px;
-    width: 300px;
+    width: 500px;
     overflow: scroll;
     /* position: sticky;
     top: 1px;
@@ -173,8 +174,8 @@ body{
     display: flex;
 }
 #longnav{
-    height: 70px;
-    width: 1600px;
+    height: 90px;
+    width: 1700px;
     /* border: 1px solid black; */
     display: flex;
     /* display: grid;
@@ -183,9 +184,10 @@ body{
     overflow-y: hidden;
     position: sticky;
     top:1px;
+    margin-top: 30px;
 }
 #longnav>div{
-    height:auto ;
+    height:50px ;
     width: 300px;
     margin-left: 30px;
     /* border: 1px solid black; */
@@ -208,3 +210,103 @@ body{
 #longnav>div>span:hover{
     color: white;
 }
+
+.videobox{
+    height: 350px;
+    width: 550px;
+    gap: 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.videobox>img{
+    width: 100%;
+    object-fit: cover;
+    height: 70%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+#lowerbody{
+    height: 900px;
+    width: 100%;
+    margin-top: 30px;
+    /* border: 1px solid black; */
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    overflow: scroll;
+    gap: 20px;
+    margin-left: 30px;
+}
+#lowerbody>div>h2{
+    font-family: Arial, Helvetica, sans-serif;
+}
+#lowerbody>div>h3{
+    color:gray;
+}
+#lowerbody>div>p{
+    color: rgb(92, 90, 90);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+#lowerbodydiv:hover{
+    cursor: pointer;
+}
+#lowerbody>div{
+    border: none;
+    /* margin: 30px; */
+}
+#circle{
+    height: 50px;
+    width: 50px;
+    border-left: 3px solid rgb(93, 91, 91);
+    border-right: 3px solid rgb(93, 91, 91);
+    border-radius: 100%;
+    margin: auto;
+    animation: spin 2s linear infinite ;
+    align-items: center;
+    margin-top: 300px;
+}
+@keyframes spin {
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(360deg);}
+}
+
+
+/* Loader */
+/* .loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #100e0e;
+} */
+/* Loader Animation */
+/* .loader {
+    width: 60px;
+    height: 60px;
+    border: 6px solid rgba(0, 0, 0, 0.2);
+    border-right: 6px solid #3498db;
+    border-left: 6px solid #3498db;
+    /* border-radius: 50%; */
+    /* animation: spin 1s linear infinite, glow 0.5s alternate-reverse infinite  ;
+} */ 
+/* Keyframes for rotation */
+/* @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes glow {
+    0% { box-shadow: 1px 0 5px rgba(52, 152, 219, 0.5); }
+    100% { box-shadow: 0 0 30px rgba(52, 152, 219, 1); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+} */

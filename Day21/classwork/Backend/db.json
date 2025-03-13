@@ -1,0 +1,69 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    },
+    {
+      "id": "8224",
+      "title": "My Name is Devraj",
+      "views": 0.6785669882924543
+    },
+    {
+      "id": "00e3",
+      "title": "",
+      "views": 0.9132142475821006
+    },
+    {
+      "id": "18b8",
+      "title": "",
+      "views": 0.5608364665134271
+    },
+    {
+      "id": "6020",
+      "title": "",
+      "views": 0.6373219266293042
+    },
+    {
+      "id": "3a98",
+      "title": "",
+      "views": 0.9591952180008898
+    },
+    {
+      "id": "029f",
+      "title": "",
+      "views": 0.7484474446141562
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "svu": [
+    {
+      "id": "1",
+      "text": "not1"
+    },
+    {
+      "id": "2",
+      "text": "nothing"
+    }
+  ]
+}

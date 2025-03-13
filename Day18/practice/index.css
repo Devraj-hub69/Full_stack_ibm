@@ -1,0 +1,15 @@
+#circle{
+    height: 50px;
+    width: 50px;
+    border-left: 3px solid rgb(93, 91, 91);
+    border-right: 3px solid rgb(93, 91, 91);
+    border-radius: 100%;
+    margin: auto;
+    animation: spin 2s linear infinite ;
+    align-items: center;
+    margin-top: 400px;
+}
+@keyframes spin {
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(360deg);}
+}

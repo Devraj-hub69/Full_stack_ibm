@@ -16,7 +16,7 @@ let search_term = document.getElementById("search") || "India Gate";
 // getData()
 let storeData = JSON.parse(localStorage.getItem("store"));
 async function showData(storeData) {
-    document.getElementById("loading").style.display = "none";;
+    document.getElementById("loading").style.display = "none";
     storeData.forEach((el, index) => {
         let snippet = el.snippet;
         let id = el.id;

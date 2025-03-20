@@ -15,7 +15,7 @@ document.getElementById('registerForm')?.addEventListener('submit', async (e) =>
     const data = await res.json();
     console.log(data)
     alert(data.message);
-    window.location.href="login.html"
+    window.location.href = "login.html"
 });
 
 document.getElementById('loginForm')?.addEventListener('submit', async (e) => {
@@ -42,25 +42,33 @@ document.getElementById('loginForm')?.addEventListener('submit', async (e) => {
 
 const productContainer = document.getElementById("product-container");
 const nextBtn = document.getElementById("next-btn");
-window.addEventListener("scroll",()=>{
-    fetchProducts();
-})
+
 
 let currentPage = 1;
+let isLoading = false
+// let hasMoreProducts = true;
 
 async function fetchProducts() {
-    try {
-        const response = await fetch(`http://localhost:8080/api/products?page=${currentPage}`,{
-            method:"GET"
-        });
-        const data = await response.json();
+    if (isLoading ) 
+        return;
 
-        console.log(data)
+    isLoading = true;
+    setTimeout(async () => {
+        try {
+            const response = await fetch(`http://localhost:8080/api/products?page=${currentPage}`, {
+                method: "GET"
+            });
+            const data = await response.json();
 
-        displayProducts(data.products);
-    } catch (error) {
-        console.error("Error fetching products:", error);
-    }
+            console.log(data)
+
+            displayProducts(data.products);
+        } catch (error) {
+            console.error("Error fetching products:", error);
+        }finally {
+            isLoading = false;
+        }
+    }, 3000)
 }
 
 
@@ -74,7 +82,7 @@ function displayProducts(products) {
 
         let img = document.createElement("img");
         img.src = product.image || "placeholder.jpg";
-        
+
 
         let name = document.createElement("p");
         name.innerText = product.name;
@@ -99,34 +107,34 @@ function displayProducts(products) {
 
 
 
-let Foodcart=[];
-function addToCart(el,index){
-  console.log(el,index)
-  Foodcart.push(el);
-  localStorage.setItem("FoodData",JSON.stringify(Foodcart));
+let Foodcart = [];
+function addToCart(el, index) {
+    console.log(el, index)
+    Foodcart.push(el);
+    localStorage.setItem("FoodData", JSON.stringify(Foodcart));
 
-  Toastify({
-    text: "Food added to your card",
-    duration: 3000,
-    // destination: "https://github.com/apvarun/toastify-js",
-    // newWindow: true,
-    close: true,
-    gravity: "top", // `top` or `bottom`
-    position: "left", // `left`, `center` or `right`
-    stopOnFocus: true, // Prevents dismissing of toast on hover
-    style: {
-      background: "linear-gradient(to right, #00b09b, #96c93d)",
-    },
-    // onClick: function(){} // Callback after click
-  }).showToast();
-  //stringify
-//   console.log(Foodcart);
-//   alert("Item added to card...")
-  let FoodCart=document.getElementById("FoodCart")
-  FoodCart.append(Foodcart);
+    Toastify({
+        text: "Food added to your card",
+        duration: 3000,
+        // destination: "https://github.com/apvarun/toastify-js",
+        // newWindow: true,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "left", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+        // onClick: function(){} // Callback after click
+    }).showToast();
+    //stringify
+    //   console.log(Foodcart);
+    //   alert("Item added to card...")
+    let FoodCart = document.getElementById("FoodCart")
+    FoodCart.append(Foodcart);
 }
 function goToCart() {
-window.location.href = "Foodcart.html";
+    window.location.href = "Foodcart.html";
 }
 // products.sort((a,b)=>{
 //   if(a.price<b.price){
@@ -140,14 +148,35 @@ window.location.href = "Foodcart.html";
 
 
 
+// nextBtn.addEventListener("click", () => {
+//     currentPage++;
+//     fetchProducts();
+// });
 
-nextBtn.addEventListener("click", () => {
-    currentPage++;
-    fetchProducts();
-});
+window.addEventListener("scroll", () => {
+    if (window.innerHeight + window.scrollY >= window.document.body.offsetHeight - 30) {
+        fetchProducts();
+    }
+})
+
 
 fetchProducts();
 
 // function handlescroll(){
 //     if(window.innerHeight+window.scrollY)
 // }
+
+// function sckeleton(arr){
+// arr.forEach((el,index)=>{
+
+//     let box=document.createElement("div");
+//     box.className="skalBox";
+// })
+// }
+
+    let loader = document.querySelector('.skeleton')
+    // let container = document.querySelector('.container')
+    setTimeout(() => {
+        loader.style.display = "none";
+        // container.style.display = "block";
+    }, 5000)

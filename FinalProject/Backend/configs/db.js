@@ -1,6 +1,8 @@
 const mongoose=require(`mongoose`);
 
-const connectDB=mongoose.connect("mongodb://127.0.0.1:27017/Registration");
+require("dotenv").config();
+
+const connectDB=mongoose.connect(process.env.MONGO_URL);
 
 module.exports={
     connectDB

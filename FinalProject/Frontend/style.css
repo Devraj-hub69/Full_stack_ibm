@@ -277,8 +277,12 @@ h3 {
     border-radius: 50%;
     border: 1px solid brown;
     background-color: rgb(232, 210, 210);
+    /* background-color: white; */
     margin-bottom: 10px;
 }
+/* #change{
+    background-color: rgb(255, 220, 220);
+} */
 
 #bike>i {
     margin: 10px;
@@ -347,6 +351,8 @@ select {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: 600;
     cursor: pointer;
+    position: sticky;
+    top:150px;
 }
 
 #foodrow {
@@ -552,7 +558,37 @@ ul a {
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 }
-
+#FoodCart{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+#gocard>button{
+    margin-left: 1305px;
+    height: 65px;
+    width: 180px;
+    border-radius: 20px;
+    background-color: yellow;
+    color: blue;
+    font-size: larger;
+    font-weight: 600;
+    cursor: pointer;
+    position:absolute;
+    position: fixed;
+    margin-top: 50px;
+    border: none;
+    box-shadow: 10px 10px 10px black;
+    
+}
+#gocard>button:hover{
+    background-color: lawngreen;
+    color: rgb(175, 5, 93);
+}
+#gocard>button>i{
+    margin-right: 10px;
+    margin-top: 15px;
+    font-size: larger;
+}
 .food-box {
     height: 550px;
     width: 350px;

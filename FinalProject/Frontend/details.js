@@ -1,4 +1,3 @@
-
 const food_suggestions = [
     {
         "id": 1,
@@ -794,255 +793,63 @@ const food_suggestions = [
 ]
 
 
-
-
-document.getElementById('registerForm')?.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-
-    const res = await fetch('http://localhost:7070/api/auth/register', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, password })
-    });
-
-    console.log(res)
-
-    const data = await res.json();
-    console.log(data)
-    alert(data.message);
-    window.location.href = "foodsugg.html"
-});
-
-document.getElementById('loginForm')?.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-
-    const res = await fetch('http://localhost:7070/api/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password })
-    });
-
-    const data = await res.json();
-    console.log(data)
-    if (data.token) {
-        localStorage.setItem('token', data.token);
-        alert("login successfull")
-        window.location.href = 'foodsugg.html';
-    } else {
-        alert('Login failed');
-    }
-});
-
-
-const nextBtn = document.getElementById("next-btn");
-const productContainer = document.getElementById("product-container");
-
-let currentPage = 1;
-let isLoading = false;
-let hasMoreProducts = true;
-
-
-async function fetchProducts() {
-
-    if (isLoading || !hasMoreProducts) 
-        return;
-
-    isLoading = true;
-
-    try {
-        const response = await fetch(`http://localhost:7070/api/products?page=${currentPage}`, {
-            method: "GET"
-        });
-        const data = await response.json();
-
-        console.log(data)
-
-        if (data.products.length) {
-            displayProducts(data.food_suggestions);
-            currentPage++;
-        } else {
-            hasMoreProducts = false; // No more products to load
-        }
-    } catch (error) {
-        console.log("Error fetching products:", error);
-    }
-
-    isLoading = false;
-}
-
-
-
-
-
-
-let change = document.getElementById("change");
-
-change.addEventListener("click", () => {
-    document.querySelector("#change").style.backgroundColor = "rgb(255, 220, 220)";
-    document.querySelector("#bike").style.backgroundColor = "white";
-    document.querySelector("#change2").style = "none";
-    document.querySelector("#bike2").style = "none";
-    document.querySelector("#change3").style = "none";
-    document.querySelector("#bike3").style = "none";
-})
-let change2 = document.getElementById("change2");
-
-change2.addEventListener("click", () => {
-    document.querySelector("#change2").style.backgroundColor = "rgb(255, 220, 220)";
-    document.querySelector("#bike2").style.backgroundColor = "white";
-    document.querySelector("#change").style = "none";
-    document.querySelector("#bike").style = "none";
-    document.querySelector("#change3").style = "none";
-    document.querySelector("#bike3").style = "none";
-})
-let change3 = document.getElementById("change3");
-
-change3.addEventListener("click", () => {
-    document.querySelector("#change3").style.backgroundColor = "rgb(255, 220, 220)";
-    document.querySelector("#bike3").style.backgroundColor = "white";
-    document.querySelector("#change").style = "none";
-    document.querySelector("#bike").style = "none";
-    document.querySelector("#change2").style = "none";
-    document.querySelector("#bike2").style = "none";
-})
-document.getElementById("openModal").onclick = function () {
-    document.getElementById("loginModal").style.display = "flex";
-}
-document.querySelector(".close").onclick = function () {
-    document.getElementById("loginModal").style.display = "none";
-}
-window.onclick = function (event) {
-    if (event.target == document.getElementById("loginModal")) {
-        document.getElementById("loginModal").style.display = "none";
-    }
-}
-
-//food data fetch
-const foodSuggetions = document.getElementById("foodSuggetions");
-function displayProducts(food_suggestions) {
+// const fooddetails = document.getElementById("details");
+// function displayProducts(food_suggestions) {
 
     
-    food_suggestions.forEach((product, index) => {
-        let productBox = document.createElement("div");
-        productBox.className = "food-box";
+//     food_suggestions.forEach((product, index) => {
+//         let productBox = document.createElement("div");
+//         productBox.className = "food-box";
 
-        let heading = document.createElement("h3");
-        heading.innerText = product.category || "No Category";
+//         let heading = document.createElement("h1");
+//         heading.innerText = product.category || "No Category";
 
-        let img = document.createElement("img");
-        img.src = product.image_url || "placeholder.jpg";
-
-
-        let name = document.createElement("p");
-        name.innerText = product.name;
-
-        let price = document.createElement("p");
-        price.innerText = `Price: $${product.price}`;
-
-        let rating = document.createElement("p");
-        rating.innerText = `Rating: ${product.rating || "N/A"}`;
-
-        let button = document.createElement("button");
-        button.innerText = "Add to Cart";
-
-        button.addEventListener("click", () => {
-            addToCart(product, index);
-        });
-
-        productBox.append(heading, img, name, price, rating, button);
-        foodSuggetions.append(productBox);
-    });
-}
+//         let img = document.createElement("img");
+//         img.src = product.image_url || "placeholder.jpg";
 
 
+//         let name = document.createElement("h3");
+//         name.innerText = `Varient:${product.name}`;
 
-let Foodcart = [];
-function addToCart(el, index) {
-    console.log(el, index)
-    Foodcart.push(el);
-    localStorage.setItem("FoodItem", JSON.stringify(Foodcart));
+//         let price = document.createElement("p");
+//         price.innerText = `Price: $${product.price}`;
 
-    Toastify({
-        text: "Food added to your card",
-        duration: 3000,
-        close: true,
-        gravity: "top", // `top` or `bottom`
-        position: "center", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
-        style: {
-            background: "linear-gradient(to right, #00b09b, #96c93d)",
-        },
-        // onClick: function(){} // Callback after click
-    }).showToast();
+//         let rating = document.createElement("p");
+//         rating.innerText = `Rating: ${product.rating || "N/A"}`;
 
-    let FoodCart = document.getElementById("FoodCart")
-    FoodCart.append(Foodcart);
-}
+//         let ingredients = document.createElement("p");
+//         ingredients.innerHTML = `<strong>Ingredients:</strong> ${product.ingredients.join(", ")}`;
 
-let gocard = document.getElementById("gocard");
-gocard.addEventListener("click", () => {
-    window.location.href="Foodcart.html"
+//         let recommended_for = document.createElement("p");
+//         recommended_for.innerHTML = `<strong>Recommended For:</strong> ${product.recommended_for.join(", ")}`;
 
-})
+//         let button = document.createElement("button");
+//         button.innerText = "Add to Cart";
 
-// nextBtn.addEventListener("click", () => {
-//     currentPage++;
-//     fetchProducts();
-// });
+//         button.addEventListener("click", () => {
+//             addToCart(product, index);
+//         });
+
+//         let button2 = document.createElement("button");
+//         button2.innerText = "Buy now";
+
+//         button2.addEventListener("click", () => {
+//             //location of payment page
+
+//         });
+
+//         productBox.append(heading, img, name, price, rating,recommended_for,ingredients,button,button2);
+//         details.append(productBox);
+//     });
+// }
+
+// displayProducts(food_suggestions)
+// const foodlist=document.getElementById("foodlist");
+// const foodDetails=document.getElementById("details");
+
+// function showDetails(){
+//     food_suggestions.forEach
+// }
 
 
-
-fetchProducts();
-
-displayProducts(food_suggestions)
-
-
- //filter by price
- let filterByPrice = document.getElementById("sortbyprice");
-  
- filterByPrice.addEventListener("change", function () {
-   let filtered = [...food_suggestions];
-   const selected = filterByPrice.options[filterByPrice.selectedIndex].value;
-   if (selected == "low") {
-     filtered = filtered.filter((product, index) => product.price < 5);
-   }
-   if (selected == "medium") {
-     filtered = filtered.filter(
-       (product, index) => product.price >= 6 && product.price <= 10
-     );
-   }
-   if (selected == "high") {
-     filtered = filtered.filter((product, index) => product.price >= 11);
-   }
-   foodSuggetions.innerHTML = "";
-   displayProducts(filtered);
- });
-
- 
-
-//filter by ratings
-let filterByRating = document.getElementById("sortbyratings");
-  
-filterByRating.addEventListener("change", function () {
-
-  let filtered1 = [...food_suggestions];
-  const selected = filterByRating.options[filterByRating.selectedIndex].value;
-  if (selected == "low1") {
-    filtered1 = filtered1.filter((product, index) => product.rating <= 2.5);
-  }
-  if (selected == "medium1") {
-    filtered1 = filtered1.filter(
-      (product, index) => product.rating > 2.5 && product.rating <= 3.5
-    );
-  }
-  if (selected == "high1") {
-    filtered1 = filtered1.filter((product, index) => product.rating > 3.5);
-  }
-  foodSuggetions.innerHTML = "";
-  displayProducts(filtered1);
-});
+module.exports=food_suggestions;

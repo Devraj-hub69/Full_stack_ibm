@@ -161,54 +161,54 @@ const products = [
   }
 ];
 
-function showData(arr){
-  arr.forEach((el,index)=>{
-      let productBox=document.createElement("div");
-      productBox.className="product-box";
-     let heading=document.createElement("h3");
-     heading.innerText=el.category;
+function showData(arr) {
+  arr.forEach((el, index) => {
+    let productBox = document.createElement("div");
+    productBox.className = "product-box";
+    let heading = document.createElement("h3");
+    heading.innerText = el.category;
 
-   let img=document.createElement("img");
-   img.src=el.image;
+    let img = document.createElement("img");
+    img.src = el.image;
 
-   let name=document.createElement("h3");
-   name.innerText=el.name;
+    let name = document.createElement("h3");
+    name.innerText = el.name;
 
-   let price=document.createElement("h3");
-   price.innerText=el.price;
+    let price = document.createElement("h3");
+    price.innerText = el.price;
 
-   let rating=document.createElement("h3");
-   rating.innerText=el.rating;
+    let rating = document.createElement("h3");
+    rating.innerText = el.rating;
 
-   let button=document.createElement("button");
-   button.innerText="Add To cart";
-   button.addEventListener("click",()=>{
-      addToCart(el,index);
-   })
-   productBox.append(heading,img,name,price,rating,button);
-   document.getElementById("products").append(productBox);
+    let button = document.createElement("button");
+    button.innerText = "Add To cart";
+    button.addEventListener("click", () => {
+      addToCart(el, index);
+    })
+    productBox.append(heading, img, name, price, rating, button);
+    document.getElementById("products").append(productBox);
   });
- 
+
 }
 //showData(products)
 
-let cart=[];
-function addToCart(el,index){
-  console.log(el,index)
+let cart = [];
+function addToCart(el, index) {
+  console.log(el, index)
   cart.push(el);
-  localStorage.setItem("cartData",JSON.stringify(cart));
+  localStorage.setItem("cartData", JSON.stringify(cart));
   //stringify
   console.log(cart);
   alert("Item added to card...")
 }
 function goToCart() {
-window.location.href = "cart.html";
+  window.location.href = "cart.html";
 }
-products.sort((a,b)=>{
-  if(a.price<b.price){
-    return-1;
+products.sort((a, b) => {
+  if (a.price < b.price) {
+    return -1;
   }
-  if(a.price>b.price){
+  if (a.price > b.price) {
     return 1;
   }
   return 0;

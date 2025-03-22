@@ -35,7 +35,20 @@ const getProducts =  async (req, res) => {
     }
 };
 
+// const sendId=async(req,res)=>{
+//     let id=req.params.id;
+//     try{
+//         let multidata=await productModel.find();
+//         let singledata=multidata.find(p=>p.id === id);
+//         res.status(200).send({
+//             singledata
+//         })
+//     }catch(e){
+//         res.status(500).json({message:"Not found"})
+//     }
+// }
 
 module.exports = {
-    getProducts, createProduct
+    getProducts, createProduct,
+    
 };

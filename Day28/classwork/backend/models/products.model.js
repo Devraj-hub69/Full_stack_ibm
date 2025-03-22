@@ -1,7 +1,4 @@
-const { url } = require('inspector');
 const mongoose = require('mongoose');
-const { type } = require('os');
-const { URL } = require('url');
 
 const productSchema = mongoose.Schema({
     name:{
@@ -19,19 +16,12 @@ const productSchema = mongoose.Schema({
     price:{
         type:Number
     },
-    ratings:{
-        type:Number
-    },
-    ingredients:{
-        type:Array
-    },
-    recommended_for:{
-        type:Array
-    },
-    image_url:{
-        type:String
+    createdBy: {  
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "user", 
+        // required: true
     }
-});
+}, {timestamps:true});
 
 const productModel = mongoose.model("product", productSchema);
 

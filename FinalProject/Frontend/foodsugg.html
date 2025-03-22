@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 
 <body>
@@ -58,6 +59,7 @@
     <br>
     <br>
     <!-- avove header part -->
+    <div id="gocard"><button><i class="fa-solid fa-cart-shopping" style="color: #bb0c0c;"></i>Go to your card</button></div>
     <div class="sugg">
         <div id="change">
             <div id="bike">
@@ -67,6 +69,7 @@
                 <span>Online delivery</span>
             </div>
         </div>
+        
         <div id="change2">
             <div id="bike2">
                 <i class="fa-solid fa-champagne-glasses" style="color: #fa0032;"></i>
@@ -83,27 +86,32 @@
                 <span>Dinner</span>
             </div>
         </div>
+        
     </div>
+    
     <hr>
-    <select name="filter" id="sortbyprice">
-        <option value="Choose price">Choose Price</option>
-        <option value="Choose price">Price:Above 500 Rs/-</option>
-        <option value="Choose price">price:200 Rs/- to 500 Rs/-</option>
-        <option value="Choose price">Price:Below 200 Rs/-</option>
-    </select>
+   
 
     <select name="filter" id="sortbyprice">
+        <option value="Choose price">Choose Price</option>
+        <option value="high">Price:Above 500 Rs/-</option>
+        <option value="medium">price:200 Rs/- to 500 Rs/-</option>
+        <option value="low">Price:Below 200 Rs/-</option>
+    </select>
+
+    <select name="filter" id="sortbycategory">
         <option value="choosecatagory">Choose category</option>
         <option value="Choose price">Veg</option>
         <option value="Choose price">Non-Veg</option>
     </select>
 
-    <select name="filter" id="sortbyprice">
+    <select name="filter" id="sortbyratings">
         <option value="Choose price">Choose by ratings</option>
-        <option value="Choose price">Below 2.5</option>
-        <option value="Choose price">Above 3.5</option>
-        <option value="Choose price">All</option>
+        <option value="low1">Below 2.5</option>
+        <option value="medium1">Under 3.5</option>
+        <option value="high1">Above 3.5</option>
     </select>
+    
     <div class="foodrow">
         <div>
             <h1>Do your first order</h1>
@@ -201,6 +209,7 @@
             </div>
         </div>
     </div>
+  
     <div id="foodSuggetions">
 
     </div>
@@ -300,6 +309,7 @@
             <div class="copyright">© 1996-2024, BiteNow.com, Inc. or its affiliates</div>
         </div>
     </footer>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="index.js"></script>
 </body>
 

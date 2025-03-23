@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato Page Switch</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .nav {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .nav button {
+            background: none;
+            border: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .nav button.active {
+            color: red;
+            font-weight: bold;
+        }
+        .section {
+            display: none;
+            padding: 20px;
+        }
+        .section.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <button class="tab" data-tab="dining">Dining Out</button>
+        <button class="tab active" data-tab="delivery">Delivery</button>
+        <button class="tab" data-tab="nightlife">Nightlife</button>
+    </div>
+    
+    <div id="dining" class="section">
+        <h2>Dining Out Options</h2>
+        <p>Explore the best restaurants for dining out.</p>
+    </div>
+    <div id="delivery" class="section active">
+        <h2>Food Delivery</h2>
+        <p>Find inspiration for your first order.</p>
+    </div>
+    <div id="nightlife" class="section">
+        <h2>Nightlife and Clubs</h2>
+        <p>Discover the best places to hang out at night.</p>
+    </div>
+    
+    <script>
+        document.querySelectorAll('.tab').forEach(button => {
+            button.addEventListener('click', function() {
+                const tabName = this.getAttribute('data-tab');
+                
+                document.querySelectorAll('.section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                document.getElementById(tabName).classList.add('active');
+                
+                document.querySelectorAll('.tab').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -48,13 +48,18 @@
 
 #bitenow-logo {
     margin-left: 60px;
+    
 }
 
 #fixed-header {
     display: flex;
     position: fixed;
-    /* margin-bottom: 50px; */
+    margin-bottom: 50px;
 }
+/* #fixed-header>img{
+    margin-top: 0;
+    margin-bottom: 40px;
+} */
 
 header {
     height: 130px;
@@ -279,6 +284,7 @@ h3 {
     background-color: rgb(232, 210, 210);
     /* background-color: white; */
     margin-bottom: 10px;
+    background-color: white;
 }
 /* #change{
     background-color: rgb(255, 220, 220);
@@ -563,6 +569,7 @@ ul a {
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 }
+
 #gocard>button{
     margin-left: 1305px;
     height: 65px;
@@ -606,6 +613,10 @@ ul a {
     font-weight: 600;
     border: none;
     border-radius: 10px;
+    cursor: pointer;
+}
+.pagination>button:active{
+    background-color: rgb(1, 1, 44);
 }
 .pagination{
     margin-left: 700px;
@@ -632,6 +643,8 @@ ul a {
     font-size: larger;
     font-weight: 600;
     cursor: pointer;
+    margin: 10px;
+    border: none;
 }
 body{
     background-color: rgb(193, 193, 193);
@@ -654,3 +667,32 @@ button:hover{
     color: black;
     border: none;
 } */
+
+/* sckeleton */
+
+.skeleton {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* filter: blur(1px);s */
+
+    .box {
+        margin: 15px;
+        height: 100px;
+        border-radius: 15px;
+        animation: colorChange 2s linear infinite;
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        background-color: rgb(236, 234, 234);
+    }
+
+    50% {
+        background-color: rgb(231, 228, 228);
+    }
+
+    100% {
+        background-color: rgb(207, 206, 206);
+    }
+}

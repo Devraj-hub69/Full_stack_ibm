@@ -23,6 +23,13 @@ function goToCart() {
         let rating = document.createElement("p");
         rating.innerText = `Rating: ${product.rating || "N/A"}`;
 
+        let button2= document.createElement("button");
+        button2.innerText = "Buy now";
+        button2.addEventListener("click", () => {
+            window.location.href="index2.html"
+
+        });
+
         let button = document.createElement("button");
         button.innerText = "Remove";
         button.addEventListener("click", () => {
@@ -30,9 +37,10 @@ function goToCart() {
             localStorage.setItem("FoodItem", JSON.stringify(passdata));
             productBox.remove();
         });
+
         let FoodCart = document.getElementById("FoodCart");
 
-        productBox.append(heading, img, name, price, rating, button);
+        productBox.append(heading, img, name, price, rating, button2,button);
         FoodCart.append(productBox);
     });
 

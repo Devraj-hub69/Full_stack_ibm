@@ -796,6 +796,7 @@ const food_suggestions = [
 
 
 
+
 document.getElementById('registerForm')?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const name = document.getElementById('name').value;
@@ -854,6 +855,7 @@ async function fetchProducts() {
 
     isLoading = true;
 
+    setTimeout(async()=>{
     try {
         const response = await fetch(`http://localhost:7070/api/products?page=${currentPage}`, {
             method: "GET"
@@ -863,19 +865,34 @@ async function fetchProducts() {
         console.log(data)
 
         if (data.products.length) {
-            displayProducts(data.food_suggestions);
+            displayProducts(data.products);
             currentPage++;
         } else {
             hasMoreProducts = false; // No more products to load
         }
     } catch (error) {
         console.log("Error fetching products:", error);
-    }
+    }finally{isLoading=false}
 
-    isLoading = false;
+},3000)
 }
 
 
+
+fetchProducts();
+
+nextBtn.addEventListener("click", () => {
+        currentPage++;
+        fetchProducts();
+    });
+    
+
+let loader = document.querySelector('.skeleton')
+// let container = document.querySelector('.container')
+setTimeout(() => {
+    loader.style.display = "none";
+    // container.style.display = "block";
+}, 5000)
 
 
 
@@ -889,6 +906,8 @@ change.addEventListener("click", () => {
     document.querySelector("#bike2").style = "none";
     document.querySelector("#change3").style = "none";
     document.querySelector("#bike3").style = "none";
+    window.location.href="foodsugg.html"
+    
 })
 let change2 = document.getElementById("change2");
 
@@ -899,6 +918,8 @@ change2.addEventListener("click", () => {
     document.querySelector("#bike").style = "none";
     document.querySelector("#change3").style = "none";
     document.querySelector("#bike3").style = "none";
+    window.location.href="restaurent.html"
+    
 })
 let change3 = document.getElementById("change3");
 
@@ -961,9 +982,9 @@ function displayProducts(food_suggestions) {
 
 
 
-let Foodcart = [];
+let Foodcart = JSON.parse(localStorage.getItem("FoodItem"));
 function addToCart(el, index) {
-    console.log(el, index)
+    // console.log(el, index)
     Foodcart.push(el);
     localStorage.setItem("FoodItem", JSON.stringify(Foodcart));
 
@@ -990,16 +1011,9 @@ gocard.addEventListener("click", () => {
 
 })
 
-// nextBtn.addEventListener("click", () => {
-//     currentPage++;
-//     fetchProducts();
-// });
 
 
-
-fetchProducts();
-
-displayProducts(food_suggestions)
+// displayProducts(food_suggestions)
 
 
  //filter by price
@@ -1046,3 +1060,7 @@ filterByRating.addEventListener("change", function () {
   foodSuggetions.innerHTML = "";
   displayProducts(filtered1);
 });
+
+
+
+

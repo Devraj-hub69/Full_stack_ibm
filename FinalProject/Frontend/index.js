@@ -876,15 +876,15 @@ async function fetchProducts() {
 
 },3000)
 }
-
+// nextBtn.addEventListener("click", () => {
+//     currentPage++;
+//     fetchProducts();
+// });
 
 
 fetchProducts();
 
-nextBtn.addEventListener("click", () => {
-        currentPage++;
-        fetchProducts();
-    });
+
     
 
 let loader = document.querySelector('.skeleton')
@@ -973,9 +973,18 @@ function displayProducts(food_suggestions) {
 
         button.addEventListener("click", () => {
             addToCart(product, index);
+            
         });
+        let button2=document.createElement("button");
+        button2.innerText="View details";
 
-        productBox.append(heading, img, name, price, rating, button);
+        button2.addEventListener("click",()=>{
+
+            localStorage.setItem("DetailsFood",JSON.stringify(product))
+            window.location.href="foodetail.html"
+        })
+
+        productBox.append(heading, img, name, price, rating, button,button2);
         foodSuggetions.append(productBox);
     });
 }

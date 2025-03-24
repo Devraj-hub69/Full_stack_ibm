@@ -672,25 +672,26 @@ button:hover{
 
 .skeleton {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* filter: blur(1px);s */
-
-    .box {
-        margin: 15px;
-        height: 100px;
-        border-radius: 15px;
-        animation: colorChange 2s linear infinite;
-    }
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
 }
 
-@keyframes colorChange {
+.skeleton .box {
+    height: 400px;
+    border-radius: 15px;
+    background: linear-gradient(90deg, #eceaea 25%, #e7e4e4 50%, #cfcece 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear;
+}
+
+@keyframes shimmer {
     0% {
-        background-color: rgb(236, 234, 234);
+        background-position: -100% 0;
+    }
+    100% {
+        background-position: 100% 0;
     }
 
-    50% {
-        background-color: rgb(231, 228, 228);
-    }
 
     100% {
         background-color: rgb(207, 206, 206);

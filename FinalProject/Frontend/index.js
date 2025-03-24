@@ -876,10 +876,7 @@ async function fetchProducts() {
 
 },3000)
 }
-// nextBtn.addEventListener("click", () => {
-//     currentPage++;
-//     fetchProducts();
-// });
+
 
 
 fetchProducts();
@@ -887,16 +884,12 @@ fetchProducts();
 
     
 
-let loader = document.querySelector('.skeleton')
-// let container = document.querySelector('.container')
-setTimeout(() => {
-    loader.style.display = "none";
-    // container.style.display = "block";
-}, 5000)
 
 
 
 
+
+let change2 = document.getElementById("change2");
 let change = document.getElementById("change");
 
 change.addEventListener("click", () => {
@@ -909,7 +902,6 @@ change.addEventListener("click", () => {
     window.location.href="foodsugg.html"
     
 })
-let change2 = document.getElementById("change2");
 
 change2.addEventListener("click", () => {
     document.querySelector("#change2").style.backgroundColor = "rgb(255, 220, 220)";
@@ -921,16 +913,16 @@ change2.addEventListener("click", () => {
     window.location.href="restaurent.html"
     
 })
-let change3 = document.getElementById("change3");
+// let change3 = document.getElementById("change3");
 
-change3.addEventListener("click", () => {
-    document.querySelector("#change3").style.backgroundColor = "rgb(255, 220, 220)";
-    document.querySelector("#bike3").style.backgroundColor = "white";
-    document.querySelector("#change").style = "none";
-    document.querySelector("#bike").style = "none";
-    document.querySelector("#change2").style = "none";
-    document.querySelector("#bike2").style = "none";
-})
+// change3.addEventListener("click", () => {
+//     document.querySelector("#change3").style.backgroundColor = "rgb(255, 220, 220)";
+//     document.querySelector("#bike3").style.backgroundColor = "white";
+//     document.querySelector("#change").style = "none";
+//     document.querySelector("#bike").style = "none";
+//     document.querySelector("#change2").style = "none";
+//     document.querySelector("#bike2").style = "none";
+// })
 document.getElementById("openModal").onclick = function () {
     document.getElementById("loginModal").style.display = "flex";
 }
@@ -1070,6 +1062,15 @@ filterByRating.addEventListener("change", function () {
   displayProducts(filtered1);
 });
 
+let loader = document.querySelector('.skeleton')
+// let container = document.querySelector('.container')
+setTimeout(() => {
+    loader.style.display = "none";
+    // container.style.display = "block";
+}, 5000)
 
 
-
+nextBtn.addEventListener("click", () => {
+    currentPage++;
+    fetchProducts();
+});

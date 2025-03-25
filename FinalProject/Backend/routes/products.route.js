@@ -6,7 +6,9 @@ const productRouter = express.Router();
 
 productRouter.get("/products", getProducts);
 productRouter.get("/secondproducts", getProducts);
+productRouter.get("/seachproducts",getProducts);
 productRouter.post("/create-product", createProduct);
+
 // productRouter.post("/insertData",sendData);
 // productRouter.get("/singeledata",sendId);
 

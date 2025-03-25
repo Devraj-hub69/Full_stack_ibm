@@ -1,0 +1,26 @@
+<!-- customer.ejs file h -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Tracking</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h2>Customer Location</h2>
+    <button onclick="startTracking()">get Location</button>
+    <div id="map" style="width: 100%; height: 500px;">
+    </div>
+    <!-- <div class="customer" id="customer">
+        <h3 class="user"></h3>
+        <h4 class="content">Location:<span id="Location"></span></h4>
+         <br> 
+        <a href="http://localhost:3000/delivery">see location</a>
+    </div> -->
+</body>
+</html>
+<script defer src="/customer.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNxv_yidslD2PVdp2Hl4fGY66jBIX79jM&libraries=places&callback=initMap"></script>
+
+

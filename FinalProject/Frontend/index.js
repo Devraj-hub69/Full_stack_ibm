@@ -1074,3 +1074,62 @@ nextBtn.addEventListener("click", () => {
     currentPage++;
     fetchProducts();
 });
+
+//implementation of  search function by throtteling
+async function getData2() {
+
+    const response = await fetch(`http://localhost:7070/api/seachproducts`, {
+            method: "GET",
+            headers:{"Content-Type":"application/json"},
+    });
+    const data = await response.json();
+    const data2=data.products;
+    // console.log(searchBar.value);
+    let query = document.getElementById("searchBar2").value.toLowerCase();
+    let filtered = data2.filter((p) => p.name.toLowerCase().includes(query));
+    foodSuggetions.innerHTML = "";
+    displayProducts(filtered);
+  }
+
+function searchFunction2(){
+    getData2();
+}
+
+
+
+// async function searchProducts() {
+
+//     if (isLoading || !hasMoreProducts) 
+//         return;
+
+//     isLoading = true;
+
+//     setTimeout(async()=>{
+//     try {
+//         const response = await fetch(`http://localhost:7070/api/seachproducts`, {
+//             method: "GET"
+//         });
+//         const data = await response.json();
+
+//         console.log(data)
+
+//     //     if (data.products.length) {
+//     //         displayProducts(data.products);
+//     //         currentPage++;
+//     //     } else {
+//     //         hasMoreProducts = false; // No more products to load
+//     //     }
+//     } 
+//     catch (error) {
+//         console.log("Error fetching products:", error);
+//     }finally{isLoading=false}
+
+// },3000)
+// }
+
+
+
+// searchProducts();
+
+
+    

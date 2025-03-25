@@ -2,7 +2,8 @@
   "name": "finalproject",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {"server":"nodemon script.js",
+  "scripts": {
+    "server":"nodemon script.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

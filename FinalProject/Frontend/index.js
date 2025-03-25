@@ -795,27 +795,106 @@ const food_suggestions = [
 
 
 
-
-
 document.getElementById('registerForm')?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
-    const res = await fetch('http://localhost:7070/api/auth/register', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, password })
-    });
+    try {
+        const res = await fetch('http://localhost:7070/api/auth/register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, email, password })
+        });
 
-    console.log(res)
+        const data = await res.json();
+        console.log(data);
 
-    const data = await res.json();
-    console.log(data)
-    alert(data.message);
-    window.location.href = "foodsugg.html"
+        if (res.ok) {
+            Toastify({
+                text: "Registration successful!",
+                duration: 3000,
+                close: true,
+                gravity: "top",
+                position: "center",
+                stopOnFocus: true,
+                style: {
+                    background: "linear-gradient(to right, #00b09b, #96c93d)",
+                    color: "#fff",
+                    fontSize: "12px",
+                    borderRadius: "8px",
+                    padding: "10px"
+                }
+            }).showToast();
+
+            setTimeout(() => {
+                window.location.href = "foodsugg.html"; // Redirect after notification
+            }, 2000);
+        } else {
+            throw new Error(data.message || "Registration failed");
+        }
+    } catch (error) {
+        Toastify({
+            text: error.message || "Something went wrong!",
+            duration: 3000,
+            close: true,
+            gravity: "top",
+            position: "center",
+            stopOnFocus: true,
+            style: {
+                background: "linear-gradient(to right, #ff5f6d, #ffc371)",
+                color: "#fff",
+                fontSize: "12px",
+                borderRadius: "8px",
+                padding: "8px",
+            }
+        }).showToast();
+    }
 });
+
+
+// document.getElementById('registerForm')?.addEventListener('submit', async (e) => {
+//     e.preventDefault();
+//     const name = document.getElementById('name').value;
+//     const email = document.getElementById('email').value;
+//     const password = document.getElementById('password').value;
+
+//     const res = await fetch('http://localhost:7070/api/auth/register', {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify({ name, email, password })
+//     });
+
+//     console.log(res)
+
+//     const data = await res.json();
+//     console.log(data)
+//     alert(data.message);
+//     window.location.href = "foodsugg.html"
+// });
+
+// document.getElementById('loginForm')?.addEventListener('submit', async (e) => {
+//     e.preventDefault();
+//     const email = document.getElementById('email').value;
+//     const password = document.getElementById('password').value;
+
+//     const res = await fetch('http://localhost:7070/api/auth/login', {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify({ email, password })
+//     });
+
+//     const data = await res.json();
+//     console.log(data)
+//     if (data.token) {
+//         localStorage.setItem('token', data.token);
+//         alert("login successfull")
+//         window.location.href = 'foodsugg.html';
+//     } else {
+//         alert('Login failed');
+//     }
+// });
 
 document.getElementById('loginForm')?.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -829,13 +908,45 @@ document.getElementById('loginForm')?.addEventListener('submit', async (e) => {
     });
 
     const data = await res.json();
-    console.log(data)
+    
     if (data.token) {
         localStorage.setItem('token', data.token);
-        alert("login successfull")
-        window.location.href = 'foodsugg.html';
+
+        Toastify({
+            text: "Login successful!",
+            duration: 3000,
+            close: true,
+            gravity: "top",
+            position: "center",
+            stopOnFocus: true,
+            style: {
+                background: "linear-gradient(to right, #00b09b, #96c93d)",
+                color: "#fff",
+                fontSize: "16px",
+                borderRadius: "8px",
+                padding: "10px"
+            }
+        }).showToast();
+
+        setTimeout(() => {
+            window.location.href = 'foodsugg.html';
+        }, 2000); // Delay redirect slightly to show the toast
     } else {
-        alert('Login failed');
+        Toastify({
+            text: "Login failed. Please check your credentials.",
+            duration: 3000,
+            close: true,
+            gravity: "top",
+            position: "center",
+            stopOnFocus: true,
+            style: {
+                background: "linear-gradient(to right, #ff5f6d, #ffc371)",
+                color: "#fff",
+                fontSize: "16px",
+                borderRadius: "8px",
+                padding: "10px"
+            }
+        }).showToast();
     }
 });
 
